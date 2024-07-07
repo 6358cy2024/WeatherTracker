@@ -1,0 +1,58 @@
+/* RESETS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  color: #444;
+}
+
+html, body {
+  height: 100%;
+  background-color: lightblue;
+  position: relative;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+/* GLOBAL/REUSABLE CLASSES */
+.text-center {
+  text-align: center;
+  padding: 10px;
+}
+
+.text-left{
+    text-align: left;
+}
+
+
+#input-area{
+    padding: 10px;
+}
+
+form {
+    display:flex;
+    flex-direction: column;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.weather{
+    margin: 40px;
+}
+
+.city-box{
+    text-align: right;
+}
