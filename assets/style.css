@@ -49,10 +49,28 @@ form {
     margin: 0 auto;
 }
 
-.weather{
-    margin: 40px;
+.container{
+    display: flex;
+    justify-content: space-between;
 }
 
-.city-box{
-    text-align: right;
+.container .weather{
+
 }
+
+.container .city-box{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    
+}
+
+.container .city-box button{
+    margin-bottom: 10px;
+}
+
+.weather{
+    margin: 40px;
+
+}
+
