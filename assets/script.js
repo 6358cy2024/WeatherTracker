@@ -17,6 +17,8 @@ function getForecastReport(locationData) { //because the forecast needs the lat 
     
 }
 
+
+
 function outputWeatherForecast(data) {
 
     const $forcastOutput = $('.weather');
@@ -38,17 +40,22 @@ function outputWeatherForecast(data) {
     //Setting weather to local Storage, and then setting it to the side
     const cities = JSON.parse(localStorage.getItem('cities')) || [];
     const cityBox = document.querySelector('.city-box');
-    cities.push(cityInput);
-    const jsonArray = JSON.stringify(cities);
-    localStorage.setItem('cities', jsonArray);
-    for (cityInput of cities) {
-        cityBox.insertAdjacentHTML('beforeend',`
-                <
-            `);
+    if (!cities.include(city.val())){//no repeat function
+        cities.push(cityInput.val());
+        const jsonArray = JSON.stringify(cities);
+        localStorage.setItem('cities', jsonArray);
+        outputSearchHistory();
+    }
+    function outputSearchHistory() {
+        for (const city of cities) {
+            cityBox.insertAdjacentHTML('beforeend',`
+                    <button>${city}</button>
+                `);
+        }
     }
 }
 
-$currentBtn.on('click', function(){
+$currentBtn.on('click', function(event){
     event.preventDefault();
     getWeather(cityInput)
         .then(outputCurrentWeather)
